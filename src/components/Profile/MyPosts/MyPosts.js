@@ -3,7 +3,19 @@ import Post from './Post/Post'
 
 
 const MyPosts = () => {
-    return (<div className={s.postsBlock}>my posts
+
+    let postsData = [
+        {id:0, message:'Privetik', likesCount: 1},
+        {id:1, message:'govNo'}
+
+    ]
+
+    return (<div className={s.postsBlock}>
+
+
+            <h3>my posts</h3>
+
+
             <div>
                 <div>
                     <textarea>   </textarea>
@@ -15,8 +27,9 @@ const MyPosts = () => {
             <div className={s.posts}>
 
 
-                <Post message="fk u baby"/>
-                <Post message="fk u baby" kolich="5"/>
+                <Post message={postsData[0].message}  likesCount={postsData[0].likesCount}/>
+
+
                 {/*            <Post/>
             <Post/>
             <Post/>
