@@ -1,3 +1,6 @@
+import {prettyFormat} from "@testing-library/react";
+import {rerenderEntireTree} from "../render";
+
 let state = {
 
     profilePage: {
@@ -22,6 +25,20 @@ let state = {
     }
 
 
+}
+
+
+export let addPost = (postMessage) => {
+
+    let newPost = {
+        id: 0,
+        message: postMessage,
+        likesCount: 1988
+    }
+
+    state.profilePage.posts.push(newPost)
+
+    rerenderEntireTree(state)
 }
 
 
