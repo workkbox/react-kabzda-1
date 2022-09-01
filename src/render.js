@@ -4,16 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 //import state from "./redux/state"
-import {addPost} from "./redux/state";
+import {addPost, updateNewPostText} from "./redux/state";
 
 
-
+const root = ReactDOM.createRoot(document.getElementById('root')); // ВОТ ЭТА СТРОКА
 export let rerenderEntireTree =(state)=>{
-const root = ReactDOM.createRoot(document.getElementById('root'));
+//const root = ReactDOM.createRoot(document.getElementById('root'));          pereneseno ^^
 root.render(
     <React.StrictMode>
 
-        <App state={state} addPost={addPost}/>
+        <App state={state} addPost={addPost} updateNewPostText={updateNewPostText}/>
     </React.StrictMode>
 );
 }
