@@ -1,5 +1,10 @@
 import {prettyFormat} from "@testing-library/react";
-import {rerenderEntireTree} from "../render";
+
+let rerenderEntireTree =()=>{
+
+   console.log('huipizzda')
+
+}
 
 let state = {
 
@@ -28,7 +33,6 @@ let state = {
 
 }
 
-
 export let addPost = () => {
 
     let newPost = {
@@ -48,5 +52,16 @@ export let updateNewPostText = (newText) => {
 
     rerenderEntireTree(state)
 }
+
+
+export const subscribe =(observer)=>{
+
+rerenderEntireTree=observer
+
+
+}
+
+
+
 
 export default state
