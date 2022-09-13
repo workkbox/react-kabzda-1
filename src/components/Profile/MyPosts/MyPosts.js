@@ -18,14 +18,17 @@ const MyPosts = (props) => {
 
         let text=newPostElement.current.value
 
-        props.addPost (text)
+        //props.addPost (text)
+        props.dispatch ({type:'ADD-POST'})
 
 
         //props.updateNewPostText(''); perenes v state
     }
 let onPostChange =()=>{
     let text=newPostElement.current.value
-        props.updateNewPostText(text);
+    let action = {type: 'UPDATE-NEW-POST-TEXT', newText: text};
+    props.dispatch (action)
+    //props.updateNewPostText(text);
 }
 
     return (<div className={s.postsBlock}>
