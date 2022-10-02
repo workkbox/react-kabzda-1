@@ -8,6 +8,7 @@ import News from "./components/News/News"
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Settings from "./components/Settings/Settings";
 import Music from "./components/Music/Music";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 
 const App = (props) => {
@@ -23,13 +24,11 @@ const App = (props) => {
                     <Routes>
 
 
-                        <Route path="/dialogs/*" element={<Dialogs
+                        <Route path="/dialogs/*" element={<DialogsContainer
                             store={props.store}
                             /*dialogs={props.state.dialogsPage.dialogs}  messages={props.state.dialogsPage.messages}*//>}/>
                         <Route path="/profile" element={<Profile
-                            profilePage={props.state.profilePage}
-
-                            dispatch={props.dispatch}/>}/>
+                            store={props.store}/>}/>
                         <Route path="/news" element={<News/>}/>
                         <Route path="/settings" element={<Settings/>}/>
                         <Route path="/music" element={<Music/>}/>
